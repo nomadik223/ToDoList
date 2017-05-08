@@ -15,6 +15,8 @@
 		C84885261EC0DD9F001E319D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84885251EC0DD9F001E319D /* Assets.xcassets */; };
 		C84885291EC0DD9F001E319D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84885271EC0DD9F001E319D /* LaunchScreen.storyboard */; };
 		C84885311EC0DFE8001E319D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C84885301EC0DFE8001E319D /* GoogleService-Info.plist */; };
+		C84885341EC0EBCE001E319D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84885331EC0EBCE001E319D /* LoginViewController.m */; };
+		C84885371EC10E61001E319D /* NewTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84885361EC10E61001E319D /* NewTodoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		C84885281EC0DD9F001E319D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C848852A1EC0DD9F001E319D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84885301EC0DFE8001E319D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C84885321EC0EBCE001E319D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C84885331EC0EBCE001E319D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C84885351EC10E61001E319D /* NewTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTodoViewController.h; sourceTree = "<group>"; };
+		C84885361EC10E61001E319D /* NewTodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTodoViewController.m; sourceTree = "<group>"; };
 		D852A6A0A70D73574A6BB5A7 /* Pods-Cross-platform-todo-list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cross-platform-todo-list.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cross-platform-todo-list/Pods-Cross-platform-todo-list.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +86,12 @@
 				C848851D1EC0DD9F001E319D /* AppDelegate.m */,
 				C848851F1EC0DD9F001E319D /* ViewController.h */,
 				C84885201EC0DD9F001E319D /* ViewController.m */,
-				C84885221EC0DD9F001E319D /* Main.storyboard */,
+				C84885321EC0EBCE001E319D /* LoginViewController.h */,
+				C84885331EC0EBCE001E319D /* LoginViewController.m */,
 				C84885251EC0DD9F001E319D /* Assets.xcassets */,
+				C84885351EC10E61001E319D /* NewTodoViewController.h */,
+				C84885361EC10E61001E319D /* NewTodoViewController.m */,
+				C84885221EC0DD9F001E319D /* Main.storyboard */,
 				C84885271EC0DD9F001E319D /* LaunchScreen.storyboard */,
 				C848852A1EC0DD9F001E319D /* Info.plist */,
 				C84885301EC0DFE8001E319D /* GoogleService-Info.plist */,
@@ -230,8 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84885341EC0EBCE001E319D /* LoginViewController.m in Sources */,
 				C84885211EC0DD9F001E319D /* ViewController.m in Sources */,
 				C848851E1EC0DD9F001E319D /* AppDelegate.m in Sources */,
+				C84885371EC10E61001E319D /* NewTodoViewController.m in Sources */,
 				C848851B1EC0DD9F001E319D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +407,7 @@
 				C848852F1EC0DD9F001E319D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
