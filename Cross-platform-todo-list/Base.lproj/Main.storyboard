@@ -198,6 +198,20 @@
                                     <action selector="signUpPressed:" destination="y4l-L0-U8a" eventType="touchUpInside" id="aYA-xM-Lug"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff5-FL-MBe">
+                                <rect key="frame" x="25" y="323" width="325" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.98823529409999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBt-6u-JNb">
+                                <rect key="frame" x="25" y="323" width="325" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oou-jL-giN">
                                 <rect key="frame" x="94" y="130" width="187.5" height="30"/>
                                 <nil key="textColor"/>
@@ -225,7 +239,9 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Oou-jL-giN" id="sGH-in-HUg"/>
+                        <outlet property="loginErrorLabel" destination="ff5-FL-MBe" id="uBT-OI-Qqn"/>
                         <outlet property="passwordTextField" destination="X6S-zs-PdJ" id="YFk-bV-38b"/>
+                        <outlet property="signupSuccessLabel" destination="bBt-6u-JNb" id="cfA-YS-NuW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75x-U4-oKU" userLabel="First Responder" sceneMemberID="firstResponder"/>

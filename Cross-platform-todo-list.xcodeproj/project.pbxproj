@@ -17,6 +17,7 @@
 		C84885311EC0DFE8001E319D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C84885301EC0DFE8001E319D /* GoogleService-Info.plist */; };
 		C84885341EC0EBCE001E319D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84885331EC0EBCE001E319D /* LoginViewController.m */; };
 		C84885371EC10E61001E319D /* NewTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84885361EC10E61001E319D /* NewTodoViewController.m */; };
+		C848853A1EC21CD0001E319D /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = C84885391EC21CD0001E319D /* Todo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		C84885331EC0EBCE001E319D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C84885351EC10E61001E319D /* NewTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTodoViewController.h; sourceTree = "<group>"; };
 		C84885361EC10E61001E319D /* NewTodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTodoViewController.m; sourceTree = "<group>"; };
+		C84885381EC21CD0001E319D /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		C84885391EC21CD0001E319D /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		D852A6A0A70D73574A6BB5A7 /* Pods-Cross-platform-todo-list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cross-platform-todo-list.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cross-platform-todo-list/Pods-Cross-platform-todo-list.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +99,8 @@
 				C848852A1EC0DD9F001E319D /* Info.plist */,
 				C84885301EC0DFE8001E319D /* GoogleService-Info.plist */,
 				C84885191EC0DD9F001E319D /* Supporting Files */,
+				C84885381EC21CD0001E319D /* Todo.h */,
+				C84885391EC21CD0001E319D /* Todo.m */,
 			);
 			path = "Cross-platform-todo-list";
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84885341EC0EBCE001E319D /* LoginViewController.m in Sources */,
+				C848853A1EC21CD0001E319D /* Todo.m in Sources */,
 				C84885211EC0DD9F001E319D /* ViewController.m in Sources */,
 				C848851E1EC0DD9F001E319D /* AppDelegate.m in Sources */,
 				C84885371EC10E61001E319D /* NewTodoViewController.m in Sources */,
