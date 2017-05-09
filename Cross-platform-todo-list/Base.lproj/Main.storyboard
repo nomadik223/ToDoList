@@ -126,7 +126,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addTodoPressed:" destination="sXN-yi-wOQ" eventType="touchUpInside" id="ynu-nE-PBc"/>
+                                    <action selector="addTodoPressed:" destination="sXN-yi-wOQ" eventType="touchUpInside" id="edL-TO-qmH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -146,8 +146,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="contentTextField" destination="Kgo-8I-BHf" id="71N-hV-Cii"/>
-                        <outlet property="titleTextField" destination="YcB-wF-NJd" id="42d-mD-v2y"/>
+                        <outlet property="contentTextField" destination="Kgo-8I-BHf" id="2ed-yb-aCD"/>
+                        <outlet property="titleTextField" destination="YcB-wF-NJd" id="RCs-Xw-QjD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCQ-Pk-E09" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,7 +185,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginPressed:" destination="y4l-L0-U8a" eventType="touchUpInside" id="4wx-tI-EKO"/>
+                                    <action selector="loginButtonPressed:" destination="y4l-L0-U8a" eventType="touchUpInside" id="AEJ-9e-jCW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZz-EQ-dgU">
@@ -195,7 +195,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUpPressed:" destination="y4l-L0-U8a" eventType="touchUpInside" id="aYA-xM-Lug"/>
+                                    <action selector="signupButtonPressed:" destination="y4l-L0-U8a" eventType="touchUpInside" id="FcE-G2-dY6"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff5-FL-MBe">
@@ -238,7 +238,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="Oou-jL-giN" id="sGH-in-HUg"/>
+                        <outlet property="emailTextField" destination="Oou-jL-giN" id="v1L-y7-X3V"/>
                         <outlet property="loginErrorLabel" destination="ff5-FL-MBe" id="uBT-OI-Qqn"/>
                         <outlet property="passwordTextField" destination="X6S-zs-PdJ" id="YFk-bV-38b"/>
                         <outlet property="signupSuccessLabel" destination="bBt-6u-JNb" id="cfA-YS-NuW"/>
