@@ -42,5 +42,30 @@
             </objects>
             <point key="canvasLocation" x="34" y="155"/>
         </scene>
+        <!--DetailsInterfaceController-->
+        <scene sceneID="7cy-0t-Kxh">
+            <objects>
+                <controller identifier="DetailsInterfaceController" id="Jwg-aB-2mz" customClass="DetailsInterfaceController">
+                    <items>
+                        <label width="1" alignment="left" text="TODO DETAILS" textAlignment="center" id="TzF-fU-fQg">
+                            <fontDescription key="font" type="boldSystem" pointSize="19"/>
+                        </label>
+                        <group width="1" alignment="left" layout="vertical" id="BAX-5k-uqQ">
+                            <items>
+                                <label width="1" alignment="left" text="Label" id="fg7-aW-PyW">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="Label" numberOfLines="0" id="PEv-Sy-Gma"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="contentLabel" destination="PEv-Sy-Gma" id="qQ4-AG-t4f"/>
+                        <outlet property="titleLabel" destination="fg7-aW-PyW" id="MXj-U7-VEx"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="314" y="155"/>
+        </scene>
     </scenes>
 </document>

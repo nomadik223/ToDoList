@@ -91,30 +91,31 @@
 }
 
 //sets up a listener for when data in the database is updated
-- (void)startMonitoringTodoUpdates{
+-(void)startMonitoringTodoUpdates {
     
-    self.allTodosHandler = [[self.userReference child:@"todos"] observeEventType:FIRDataEventTypeValue
-                                                                       withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-                                                                           
-                                                                           self.allTodos = [[NSMutableArray alloc] init];
-                                                                           
-                                                                           for (FIRDataSnapshot *child in snapshot.children) {
-                                                                               
-                                                                               Todo *todo = [[Todo alloc] init];
-                                                                               
-                                                                               NSDictionary *todoData = child.value;
-                                                                               todo.title = todoData[@"title"];
-                                                                               todo.content = todoData[@"content"];
-                                                                               
-                                                                               [self.allTodos addObject:todo];
-                                                                               [self.tableView reloadData];
-                                                                               
-                                                                           }
-                                                                           
-                                                                           
-                                                                           
-                                                                       }];
     
+    self.allTodosHandler = [[self.userReference child:@"todos"]
+                            observeEventType:FIRDataEventTypeValue
+                            withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                                
+                                self.allTodos = [[NSMutableArray alloc]init];
+                                
+                                for (FIRDataSnapshot *child in snapshot.children) {
+                                    NSDictionary *todoData = child.value;
+                                    NSString *todoTitle = todoData[@"title"];
+                                    NSString *todoContent = todoData[@"content"];
+                                    NSNumber *todoCompleted = todoData[@"completed"];
+                                    
+                                    //for lab append new todo to all todos array
+                                    if (todoCompleted.integerValue == 0) {
+                                        Todo *currentTodo = [[Todo alloc] init];
+                                        currentTodo.title = todoTitle;
+                                        currentTodo.content = todoContent;
+                                        [self.allTodos addObject:currentTodo];
+                                    }
+                                }
+                                [self.tableView reloadData];
+                            }];
 }
 
 //Handles showing and hiding the NewTodoViewController
@@ -126,9 +127,17 @@
     if (self.addTodoContainer.hidden == YES) {
         [self.addTodoContainer setHidden:NO];
         self.addTodoTop.constant = kOpenTop;
+        [UIView animateWithDuration:0.4 animations:^{
+            [self.view layoutIfNeeded];
+        }];
     } else {
-        [self.addTodoContainer setHidden:YES];
         self.addTodoTop.constant = kDefaultTop;
+        [UIView animateWithDuration:0.4 delay:0.0 options:0 animations:^{
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            [self.addTodoContainer setHidden:YES];
+        }];
+        
     }
     
 }
@@ -146,6 +155,21 @@
     
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        self.userReference = [[FIRDatabase database]reference];
+        
+        Todo *currentTodo = self.allTodos[indexPath.row];
+        
+        [[[[[[self.userReference child:@"users"] child:self.currentUser.uid] child:@"todos"] child:currentTodo.key] child:@"completed"] setValue:@1];
+    }
+    [self.tableView reloadData];
+}
+
 
 //TableView Delegate Methods
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -155,12 +179,13 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     
     Todo *child = [self.allTodos objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@", child.title];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", child.content];
     
     return cell;
 }

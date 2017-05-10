@@ -31,12 +31,16 @@
     FIRDatabaseReference *databaseReference = [[FIRDatabase database] reference];
     FIRUser *currentUser = [[FIRAuth auth] currentUser];
     
-    FIRDatabaseReference *userReferense = [[databaseReference child:@"users"] child:currentUser.uid];
-    
-    FIRDatabaseReference *newTodoReference = [[userReferense child:@"todos"] childByAutoId];
+    FIRDatabaseReference *userReference = [[databaseReference child:@"users"] child:currentUser.uid];
+    FIRDatabaseReference *newTodoReference = [[userReference child:@"todos"] childByAutoId];
     
     [[newTodoReference child:@"title"] setValue:self.titleTextField.text];
     [[newTodoReference child:@"content"] setValue:self.contentTextField.text];
+    [[newTodoReference child:@"completed"] setValue:@0];
+    [[newTodoReference child:@"key"] setValue:newTodoReference.key];
+    
+    self.titleTextField.text = nil;
+    self.contentTextField.text = nil;
     
 }
 

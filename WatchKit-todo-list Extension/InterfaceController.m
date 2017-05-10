@@ -25,14 +25,12 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-
-    [self setupTable];
     
+    [self setupTable];
     // Configure interface objects here.
 }
 
--(void)setupTable{
-    
+- (void)setupTable{
     [self.table setNumberOfRows:self.allTodos.count withRowType:@"TodoRowController"];
     
     for (NSInteger i = 0; i < self.allTodos.count; i++) {
@@ -43,25 +41,23 @@
         [rowController.contentLabel setText:self.allTodos[i].content];
         
     }
-    
 }
 
--(NSArray<Todo *> *)allTodos{
+- (NSArray<Todo *> *)allTodos{
     
     Todo *firstTodo = [[Todo alloc]init];
     firstTodo.title = @"First Todo";
     firstTodo.content = @"This is a Todo";
     
     Todo *secondTodo = [[Todo alloc]init];
-    secondTodo.title = @"First Todo";
-    secondTodo.content = @"This is a Todo, too";
+    secondTodo.title = @"Second Todo";
+    secondTodo.content = @"This is also a Todo";
     
     Todo *thirdTodo = [[Todo alloc]init];
-    thirdTodo.title = @"First Todo";
-    thirdTodo.content = @"This too is a Todo";
- 
-    return @[firstTodo, secondTodo, thirdTodo];
+    thirdTodo.title = @"Third Todo";
+    thirdTodo.content = @"This is, yet again, a Todo";
     
+    return @[firstTodo, secondTodo, thirdTodo];
 }
 
 - (void)willActivate {
@@ -74,7 +70,16 @@
     [super didDeactivate];
 }
 
+-(void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex{
+    
+    NSDictionary *currentTodoDetails = @{@"title":self.allTodos[rowIndex].title, @"content":self.allTodos[rowIndex].content};
+    
+    [self pushControllerWithName:@"DetailsInterfaceController" context:currentTodoDetails];
+    
+}
+
 @end
+
 
 
 

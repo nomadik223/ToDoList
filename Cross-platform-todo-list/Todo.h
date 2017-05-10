@@ -12,5 +12,7 @@
 
 @property(strong, nonatomic)NSString *title;
 @property(strong, nonatomic)NSString *content;
+@property(strong, nonatomic)NSString *key;
+@property(strong, nonatomic)NSNumber *completed;
 
 @end
