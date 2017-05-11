@@ -166,6 +166,7 @@
         Todo *currentTodo = self.allTodos[indexPath.row];
         
         [[[[[[self.userReference child:@"users"] child:self.currentUser.uid] child:@"todos"] child:currentTodo.key] child:@"completed"] setValue:@1];
+        [self.allTodos removeObjectAtIndex:indexPath.row];
     }
     [self.tableView reloadData];
 }
