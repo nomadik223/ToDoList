@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--InterfaceController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="InterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <table alignment="left" id="NjY-ce-tXi">
+                            <items>
+                                <tableRow identifier="TodoRowController" id="eFt-qi-3dG" customClass="TodoRowController">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="hxK-tV-QfB">
+                                        <items>
+                                            <label alignment="left" text="Title" id="H1t-TQ-U3O">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label alignment="left" text="Content" numberOfLines="0" id="7Zr-sH-v00">
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="contentLabel" destination="7Zr-sH-v00" id="eCQ-Fo-zdv"/>
+                                        <outlet property="titleLabel" destination="H1t-TQ-U3O" id="ZZu-i7-8BD"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="NjY-ce-tXi" id="qut-y9-6ts"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="155"/>
+        </scene>
+        <!--DetailsInterfaceController-->
+        <scene sceneID="7cy-0t-Kxh">
+            <objects>
+                <controller identifier="DetailsInterfaceController" id="Jwg-aB-2mz" customClass="DetailsInterfaceController">
+                    <items>
+                        <label width="1" alignment="left" text="TODO DETAILS" textAlignment="center" id="TzF-fU-fQg">
+                            <fontDescription key="font" type="boldSystem" pointSize="19"/>
+                        </label>
+                        <group width="1" alignment="left" layout="vertical" id="BAX-5k-uqQ">
+                            <items>
+                                <label width="1" alignment="left" text="Label" id="fg7-aW-PyW">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="Label" numberOfLines="0" id="PEv-Sy-Gma"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="contentLabel" destination="PEv-Sy-Gma" id="qQ4-AG-t4f"/>
+                        <outlet property="titleLabel" destination="fg7-aW-PyW" id="MXj-U7-VEx"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="314" y="155"/>
+        </scene>
+    </scenes>
+</document>
